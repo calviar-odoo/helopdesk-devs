@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="helpdesk_team_view_form_inherit">
+            <field name="name">helpdesk.team.form</field>
+            <field name="model">helpdesk.team</field>
+            <field name="inherit_id" ref="helpdesk.helpdesk_team_view_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='assign_method']" position="after">
+                    <field name="team_id" invisible="1"/>
+
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>

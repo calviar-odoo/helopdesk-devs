@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="ticket_view_form_inherit">
+            <field name="name">helpdesk.ticket.form.inherit</field>
+            <field name="model">helpdesk.ticket</field>
+            <field name="inherit_id" ref="helpdesk.helpdesk_ticket_view_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='user_id']" position="after">
+
+                    <field name="tag_ids" invisible="1"/>
+                    <!--<field name="helpdesk_team_id" />-->
+                    <field name="canal_type"/>
+                </xpath>
+                <xpath expr="//field[@name='email_cc']" position="after">
+                    <field name="alias_ticket" placeholder="Alias"/>
+                    <field name="clasificacion_ticket" placeholder="Categoria"/>
+                    <field name="subclasificacion_ticket" placeholder="Sub-Categoria"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="alias_ticket_form">
+            <field name="name">res.alias.form</field>
+            <field name="model">res.alias</field>
+            <field name="arch" type="xml">
+                <form string="Alias Form">
+                    <sheet>
+                        <group>
+                            <field name="name" placeholder="Alias"/>
+                        </group>
+                        <group>
+                            <field name="categoria_ids"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="alias_ticket_list">
+            <field name="name">res.alias.list</field>
+            <field name="model">res.alias</field>
+            <field name="arch" type="xml">
+                <tree string="Alias List">
+                    <field name="name" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="clasificacion_ticket_graph" model="ir.ui.view">
+            <field name="name">res.alias.graph</field>
+            <field name="model">res.alias</field>
+            <field name="arch" type="xml">
+                <graph string="Helpdesk Ticket Type Analysis" stacked="True" sample="1">
+                    <field name="name" type="col"/>
+                    <field name="categoria_ids" type="measure" widget="percentage"/>
+                </graph>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="alias_ticket_list_action">
+            <field name="name">Alias</field>
+            <field name="res_model">res.alias</field>
+            <field name="view_mode">tree,form,pivot,graph</field>
+            <field name="help" type="html"> <p class="o_view_nocontent_smiling_face"> Agregar Nuevo Alias </p> </field>
+        </record>
+
+        <menuitem id="menu_alias" name="Alias Ticket" parent="helpdesk.helpdesk_menu_config" sequence="30"  action="alias_ticket_list_action"/>
+    </data>
+</odoo>

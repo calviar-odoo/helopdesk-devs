@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="helpdesk_ticket_analysis_action" model="ir.actions.act_window">
+           <field name="name">Ticket Analysis</field>
+           <field name="res_model">helpdesk.ticket.report.analysis</field>
+           <field name="view_mode">pivot,graph</field>
+            <field name="search_view_id" ref="helpdesk.helpdesk_ticket_report_analysis_view_search"/>
+            <field name="context">{
+                'pivot_measures': ['__count__', 'ticket_assignation_hours', 'ticket_close_hours'],
+            }</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_empty_folder">
+                    No data yet !
+                </p><p>
+                    Create tickets to get statistics on the performance of your teams.
+                </p>
+            </field>
+        </record>
+    </data>
+</odoo>
