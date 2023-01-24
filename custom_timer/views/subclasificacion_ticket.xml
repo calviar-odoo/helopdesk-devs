@@ -9,7 +9,7 @@
                 <form string="Sub-Categoria Form">
                     <sheet>
                         <group>
-                            <field name="name" placeholder="Sub-Categoria"/>
+                            <field name="name" placeholder="Requerimiento"/>
                         </group>
                         <group>
                             <field name="clasificacion_id"/>
@@ -41,12 +41,14 @@
         </record>
 
         <record model="ir.actions.act_window" id="subclasificacion_ticket_list_action">
-            <field name="name">Sub-Categoria</field>
+            <field name="name">Requerimiento</field>
             <field name="res_model">subclasificacion.ticket</field>
             <field name="view_mode">tree,form,pivot,graph</field>
-            <field name="help" type="html"> <p class="o_view_nocontent_smiling_face"> Agregar Nueva Sub-Categoria</p> </field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face"> Agregar nuevo requerimiento</p>
+            </field>
         </record>
 
-        <menuitem id="menu_subclasificacion" name="Sub-Categoria Ticket" parent="helpdesk.helpdesk_menu_config" sequence="38"  action="subclasificacion_ticket_list_action"/>
+        <menuitem id="menu_subclasificacion" name="Requerimiento Ticket" parent="helpdesk.helpdesk_menu_config" sequence="38" action="subclasificacion_ticket_list_action"/>
     </data>
 </odoo>

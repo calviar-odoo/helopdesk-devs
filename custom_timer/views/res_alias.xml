@@ -9,7 +9,7 @@
                 <form string="Alias Form">
                     <sheet>
                         <group>
-                            <field name="name" placeholder="Alias"/>
+                            <field name="name" placeholder="Producto/Servicio"/>
                         </group>
                         <group>
                             <field name="categoria_ids"/>
@@ -41,12 +41,14 @@
         </record>
 
         <record model="ir.actions.act_window" id="alias_ticket_list_action">
-            <field name="name">Alias</field>
+            <field name="name">Producto/Servicio</field>
             <field name="res_model">res.alias</field>
             <field name="view_mode">tree,form,pivot,graph</field>
-            <field name="help" type="html"> <p class="o_view_nocontent_smiling_face"> Agregar Nuevo Alias </p> </field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face"> Agregar nuevo Producto/Servicio </p>
+            </field>
         </record>
 
-        <menuitem id="menu_alias" name="Alias Ticket" parent="helpdesk.helpdesk_menu_config" sequence="30"  action="alias_ticket_list_action"/>
+        <menuitem id="menu_alias" name="Producto/Servicio Ticket" parent="helpdesk.helpdesk_menu_config" sequence="30" action="alias_ticket_list_action"/>
     </data>
 </odoo>

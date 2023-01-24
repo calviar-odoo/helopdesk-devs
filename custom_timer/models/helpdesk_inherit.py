@@ -15,10 +15,11 @@ class TicketCustomTimer(models.Model):
     user_id = fields.Many2one('res.users', string='Asignado a', default=lambda self: self._get_user()) #required=True
     #helpdesk_team_id = fields.Many2one('res.users', string='Asignado', default=lambda self: self._get_user(), required=True)
     canal_type = fields.Many2one('res.canales', string='Canal', index=True)
-    alias_ticket = fields.Many2one('res.alias', string='Alias', index=True)
+    alias_ticket = fields.Many2one('res.alias', string='Producto/Servicio', index=True)
     clasificacion_ticket = fields.Many2one('clasificacion.ticket', string='Categoria', index=True)
-    subclasificacion_ticket = fields.Many2one('subclasificacion.ticket', string='Sub-Categoria', index=True)
-    contar = fields.Float("MeasureCuenta", compute='_calculate_percentage', compute_sudo=True, store=True)
+    subclasificacion_ticket = fields.Many2one('subclasificacion.ticket', string='Requerimiento', index=True)
+    solucion = fields.Many2one('solucion', string='Solucion', index=True)
+
 
     team_timer = fields.Float(string='Team Timer')
     user_timer = fields.Float(string='User Timer')
@@ -96,12 +97,11 @@ class TicketCustomTimer(models.Model):
     def _get_subcategoria(self):
         for record in self:
             return {'domain': {'subclasificacion_ticket': [('clasificacion_id', '=', record.clasificacion_ticket.id)]}}
-
-    @api.model
-    def _calculate_percentage(self):
+    
+    @api.onchange('subclasificacion_ticket')
+    def _get_solucion(self):
         for record in self:
-            contar = self.env['helpdesk.ticket'].search_count([])
-            record.contar = contar
+            return {'domain': {'solucion': [('subclasificacion_id', '=', record.subclasificacion_ticket.id)]}}
 
     @api.onchange("stage_id")
     def stoppingStage(self):
