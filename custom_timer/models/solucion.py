@@ -6,4 +6,4 @@ class Solucion(models.Model):
     _description = 'Solucion para los tickets'
 
     name = fields.Char(string='Solucion')
-    subclasificacion_id = fields.Many2one(string="Subclasificacion", comodel_name="subclasificacion.ticket")
+    subclasificacion_id = fields.Many2one(string="Requerimiento", comodel_name="subclasificacion.ticket")
