@@ -10,10 +10,6 @@ class SubClasificacionTicket(models.Model):
 
     name = fields.Char(string='Sub-categoria')
     clasificacion_id = fields.Many2one(string="Categoria", comodel_name="clasificacion.ticket")
-    contar = fields.Float("MeasureCuentaClasifc", compute='_calculate_percentage', compute_sudo=True, store=True)
+    solucion_ids = fields.One2many(string="Solucion", comodel_name="solucion", inverse_name="subclasificacion_id")
 
-    @api.model
-    def _calculate_percentage(self):
-        for record in self:
-            contar = self.env['helpdesk.ticket'].search_count(['clasificacion_ticket', '=', 1])
-            record.contar = contar
+    

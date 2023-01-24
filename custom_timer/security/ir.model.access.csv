@@ -3,3 +3,4 @@ res_canales_all, All users example ,model_res_canales,base.group_user,1,1,1,1
 res_clasificacion_all, All users example ,model_clasificacion_ticket,base.group_user,1,1,1,1
 res_subclasificacion_all, All users example ,model_subclasificacion_ticket,base.group_user,1,1,1,1
 res_alias, All users example ,model_res_alias,base.group_user,1,1,1,1
+res_solucion_all, All users example ,model_solucion,base.group_user,1,1,1,1

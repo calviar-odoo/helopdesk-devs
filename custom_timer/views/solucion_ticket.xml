@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="solucion_ticket_form">
+            <field name="name">solucion.ticket.form</field>
+            <field name="model">solucion</field>
+            <field name="arch" type="xml">
+                <form string="Solucion Form">
+                    <sheet>
+                        <group>
+                            <field name="name" placeholder="Solucion"/>
+                        </group>
+                        <group>
+                            <field name="subclasificacion_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="solucion_ticket_list">
+            <field name="name">solucion.list</field>
+            <field name="model">solucion</field>
+            <field name="arch" type="xml">
+                <tree string="solucion List">
+                    <field name="name" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="subclasificacion_ticket_graph" model="ir.ui.view">
+            <field name="name">solucion.graph</field>
+            <field name="model">solucion</field>
+            <field name="arch" type="xml">
+                <graph string="Helpdesk Ticket Type Analysis" stacked="True" sample="1">
+                    <field name="name" type="col"/>
+                    <field name="subclasificacion_id" type="measure" widget="percentage"/>
+                </graph>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="solucion_ticket_list_action">
+            <field name="name">Solucion</field>
+            <field name="res_model">solucion</field>
+            <field name="view_mode">tree,form,pivot,graph</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face"> Agregar Nueva Solucion</p>
+            </field>
+        </record>
+
+        <menuitem id="menu_solucion" name="Solucion Ticket" parent="helpdesk.helpdesk_menu_config" sequence="39" action="solucion_ticket_list_action"/>
+    </data>
+</odoo>

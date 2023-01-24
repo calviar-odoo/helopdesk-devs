@@ -16,6 +16,7 @@
                     <field name="alias_ticket" placeholder="Alias"/>
                     <field name="clasificacion_ticket" placeholder="Categoria"/>
                     <field name="subclasificacion_ticket" placeholder="Sub-Categoria"/>
+                    <field name="solucion" placeholder="Solucion"/>
                 </xpath>
             </field>
         </record>

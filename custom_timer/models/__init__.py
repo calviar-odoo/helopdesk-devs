@@ -8,3 +8,4 @@ from . import res_partner
 from . import res_users
 from . import subclasificacion_ticket
 from . import alias
+from . import solucion

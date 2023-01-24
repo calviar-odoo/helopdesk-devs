@@ -30,6 +30,7 @@
         "views/res_canales.xml",
         "views/res_partner_inherit.xml",
         "views/res_user_inherit.xml",
+        "views/solucion_ticket.xml",
     ],
 
     'demo': [
