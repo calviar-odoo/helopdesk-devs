@@ -9,7 +9,7 @@ class SubClasificacionTicket(models.Model):
     _description = 'Clasificación de los tickets'
 
     name = fields.Char(string='Requerimiento')
-    clasificacion_id = fields.Many2one(string="Categoria", comodel_name="clasificacion.ticket")
+    clasificacion_id = fields.Many2one(string="Servicio", comodel_name="clasificacion.ticket")
     solucion_ids = fields.One2many(string="Solucion", comodel_name="solucion", inverse_name="subclasificacion_id")
 
     

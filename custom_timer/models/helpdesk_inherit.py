@@ -15,8 +15,8 @@ class TicketCustomTimer(models.Model):
     user_id = fields.Many2one('res.users', string='Asignado a', default=lambda self: self._get_user()) #required=True
     #helpdesk_team_id = fields.Many2one('res.users', string='Asignado', default=lambda self: self._get_user(), required=True)
     canal_type = fields.Many2one('res.canales', string='Canal', index=True)
-    alias_ticket = fields.Many2one('res.alias', string='Producto/Servicio', index=True)
-    clasificacion_ticket = fields.Many2one('clasificacion.ticket', string='Categoria', index=True)
+    alias_ticket = fields.Many2one('res.alias', string='Ente/Operadora', index=True)
+    clasificacion_ticket = fields.Many2one('clasificacion.ticket', string='Servicio', index=True)
     subclasificacion_ticket = fields.Many2one('subclasificacion.ticket', string='Requerimiento', index=True)
     solucion = fields.Many2one('solucion', string='Solucion', index=True)
 
