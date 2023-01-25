@@ -13,8 +13,8 @@
                     <field name="canal_type"/>
                 </xpath>
                 <xpath expr="//field[@name='email_cc']" position="after">
-                    <field name="alias_ticket" placeholder="Producto/Servicio"/>
-                    <field name="clasificacion_ticket" placeholder="Categoria"/>
+                    <field name="alias_ticket" placeholder="Ente"/>
+                    <field name="clasificacion_ticket" placeholder="Servcio"/>
                     <field name="subclasificacion_ticket" placeholder="Requerimiento"/>
                     <field name="solucion" placeholder="Solucion"/>
                 </xpath>
