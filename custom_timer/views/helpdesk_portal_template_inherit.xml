@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="tickets_followup_inherit" inherit_id="helpdesk.tickets_followup">
+        <xpath expr="//div[@t-field='ticket.user_id']" position="replace">
+            <div t-field="ticket.user_id" t-options='{"widget": "contact", "fields": ["name"], "no_marker": true}'/>
+        </xpath>
+    </template>
+</odoo>
