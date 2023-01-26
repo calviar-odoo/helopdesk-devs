@@ -8,7 +8,7 @@ class ClasificacionTicket(models.Model):
     _name = 'clasificacion.ticket'
     _description = 'Clasificación de los tickets'
 
-    name = fields.Char(string='Alias')
+    name = fields.Char(string='Clasificacion')
     alias = fields.Many2one(string="Alias", comodel_name="res.alias")
     ticket_ids = fields.One2many(string='Clasificación', comodel_name='helpdesk.ticket',
                                  inverse_name='clasificacion_ticket')

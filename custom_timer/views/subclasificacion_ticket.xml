@@ -41,11 +41,11 @@
         </record>
 
         <record model="ir.actions.act_window" id="subclasificacion_ticket_list_action">
-            <field name="name">Requerimiento</field>
+            <field name="name">Subclasificacion</field>
             <field name="res_model">subclasificacion.ticket</field>
             <field name="view_mode">tree,form,pivot,graph</field>
             <field name="help" type="html">
-                <p class="o_view_nocontent_smiling_face"> Agregar nuevo requerimiento</p>
+                <p class="o_view_nocontent_smiling_face"> Agregar nueva subclasificacion</p>
             </field>
         </record>
 
