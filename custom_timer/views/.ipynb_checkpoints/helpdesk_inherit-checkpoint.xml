@@ -6,16 +6,14 @@
             <field name="model">helpdesk.ticket</field>
             <field name="inherit_id" ref="helpdesk.helpdesk_ticket_view_form" />
             <field name="arch" type="xml">
-                <xpath expr="//field[@name='user_id']" position="after">
-
-                    <field name="tag_ids" invisible="1"/>
-                    <!--<field name="helpdesk_team_id" />-->
+                <xpath expr="//field[@name='tag_ids']" position="replace">
                     <field name="canal_type"/>
                 </xpath>
                 <xpath expr="//field[@name='email_cc']" position="after">
                     <field name="alias_ticket" placeholder="Alias"/>
-                    <field name="clasificacion_ticket" placeholder="Categoria"/>
-                    <field name="subclasificacion_ticket" placeholder="Sub-Categoria"/>
+                    <field name="clasificacion_ticket" placeholder="Clasificacion"/>
+                    <field name="subclasificacion_ticket" placeholder="Subclasificacion"/>
+                    <field name="solucion" placeholder="Solucion" invisible="1"/>
                 </xpath>
             </field>
         </record>

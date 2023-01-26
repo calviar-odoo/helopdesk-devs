@@ -18,7 +18,7 @@ class TicketCustomTimer(models.Model):
     alias_ticket = fields.Many2one('res.alias', string='Alias', index=True)
     clasificacion_ticket = fields.Many2one('clasificacion.ticket', string='Clasificacion', index=True)
     subclasificacion_ticket = fields.Many2one('subclasificacion.ticket', string='subclasificacion', index=True)
-    #solucion = fields.Many2one('solucion', string='Solucion', index=True)
+    solucion = fields.Many2one('solucion', string='Solucion', index=True)
 
 
     team_timer = fields.Float(string='Team Timer')

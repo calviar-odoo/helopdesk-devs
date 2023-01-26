@@ -10,10 +10,10 @@
                     <field name="canal_type"/>
                 </xpath>
                 <xpath expr="//field[@name='email_cc']" position="after">
-                    <field name="alias_ticket" placeholder="Ente"/>
-                    <field name="clasificacion_ticket" placeholder="Servicio"/>
-                    <field name="subclasificacion_ticket" placeholder="Requerimiento"/>
-                    <field name="solucion" placeholder="Solucion"/>
+                    <field name="alias_ticket" placeholder="Alias"/>
+                    <field name="clasificacion_ticket" placeholder="Clasificacion"/>
+                    <field name="subclasificacion_ticket" placeholder="Subclasificacion"/>
+                    <field name="solucion" placeholder="Solucion" invisible="1"/>
                 </xpath>
             </field>
         </record>
