@@ -16,9 +16,10 @@ class TicketCustomTimer(models.Model):
     #helpdesk_team_id = fields.Many2one('res.users', string='Asignado', default=lambda self: self._get_user(), required=True)
     canal_type = fields.Many2one('res.canales', string='Canal', index=True)
     alias_ticket = fields.Many2one('res.alias', string='Alias', index=True)
-    clasificacion_ticket = fields.Many2one('clasificacion.ticket', string='Categoria', index=True)
-    subclasificacion_ticket = fields.Many2one('subclasificacion.ticket', string='Sub-Categoria', index=True)
-    contar = fields.Float("MeasureCuenta", compute='_calculate_percentage', compute_sudo=True, store=True)
+    clasificacion_ticket = fields.Many2one('clasificacion.ticket', string='Clasificacion', index=True)
+    subclasificacion_ticket = fields.Many2one('subclasificacion.ticket', string='subclasificacion', index=True)
+    #solucion = fields.Many2one('solucion', string='Solucion', index=True)
+
 
     team_timer = fields.Float(string='Team Timer')
     user_timer = fields.Float(string='User Timer')
@@ -88,20 +89,19 @@ class TicketCustomTimer(models.Model):
             return {'domain': {'helpdesk_team_id': [('helpdesk_team_id', '=', record.team_id.id)]}}
 
     @api.onchange('alias_ticket')
-    def _get_categoria(self):
+    def _get_servicio(self):
         for record in self:
-            return {'domain': {'clasificacion_ticket': [('alias', '=', record.alias_ticket.id)]}}
+            return {'domain': {'clasificacion_ticket': [('alias', '=', record.alias_ticket.id)]}}        
 
     @api.onchange('clasificacion_ticket')
-    def _get_subcategoria(self):
+    def _get_alias(self):
         for record in self:
             return {'domain': {'subclasificacion_ticket': [('clasificacion_id', '=', record.clasificacion_ticket.id)]}}
-
-    @api.model
-    def _calculate_percentage(self):
+    
+    @api.onchange('subclasificacion_ticket')
+    def _get_clasificacion(self):
         for record in self:
-            contar = self.env['helpdesk.ticket'].search_count([])
-            record.contar = contar
+            return {'domain': {'solucion': [('subclasificacion_id', '=', record.subclasificacion_ticket.id)]}}
 
     @api.onchange("stage_id")
     def stoppingStage(self):
