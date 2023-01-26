@@ -19,6 +19,7 @@ class HelpdeskTicketReportAnalysisInherit(models.Model):
     tiempo_progress = fields.Float(string='T. Nuevo a Progreso')
     tiempo_completado = fields.Float(string='T. en Completarse')
     tiempo_anulado = fields.Float(string='T. en ser Anulado')
+    solucion = fields.Many2one('solucion', string='Solucion', index=True)
 
     def _select(self):
         select_str = """
@@ -30,6 +31,7 @@ class HelpdeskTicketReportAnalysisInherit(models.Model):
                    T.alias_ticket AS alias_ticket,
                    T.clasificacion_ticket AS clasificacion_ticket,
                    T.subclasificacion_ticket AS subclasificacion_ticket,
+                   T.solucion AS solucion,
                    T.tiempo_progress AS tiempo_progress,
                    T.tiempo_completado AS tiempo_completado,
                    T.tiempo_anulado AS tiempo_anulado,
