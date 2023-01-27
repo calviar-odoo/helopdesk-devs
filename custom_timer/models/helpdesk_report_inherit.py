@@ -13,9 +13,9 @@ class HelpdeskTicketReportAnalysisInherit(models.Model):
 
     canal_type = fields.Many2one('res.canales', string='Canal', readonly=True)
     canal_typesito = fields.Char(string='Canal', readonly=True)
-    alias_ticket = fields.Many2one('res.alias', string='Alias', index=True)
-    clasificacion_ticket = fields.Many2one('clasificacion.ticket', string='Categoria', index=True)
-    subclasificacion_ticket = fields.Many2one('subclasificacion.ticket', string='Sub-Categoria', index=True)
+    alias_ticket = fields.Many2one('res.alias', string='Ente/Producto', index=True)
+    clasificacion_ticket = fields.Many2one('clasificacion.ticket', string='Servicio', index=True)
+    subclasificacion_ticket = fields.Many2one('subclasificacion.ticket', string='Requerimiento', index=True)
     tiempo_progress = fields.Float(string='T. Nuevo a Progreso')
     tiempo_completado = fields.Float(string='T. en Completarse')
     tiempo_anulado = fields.Float(string='T. en ser Anulado')
@@ -28,9 +28,9 @@ class HelpdeskTicketReportAnalysisInherit(models.Model):
                    T.create_date AS create_date,
                    T.priority AS priority,
                    T.canal_type AS canal_type,
-                   T.alias_ticket AS alias_ticket,
-                   T.clasificacion_ticket AS clasificacion_ticket,
-                   T.subclasificacion_ticket AS subclasificacion_ticket,
+                   T.alias_ticket AS ente_producto,
+                   T.clasificacion_ticket AS Servicio,
+                   T.subclasificacion_ticket AS Requerimiento,
                    T.solucion AS solucion,
                    T.tiempo_progress AS tiempo_progress,
                    T.tiempo_completado AS tiempo_completado,
