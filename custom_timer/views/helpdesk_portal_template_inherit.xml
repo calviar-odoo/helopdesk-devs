@@ -21,7 +21,7 @@
 )</small>
                                     </div>
                                     <div class="col-3 text-right">
-                                        <small class="text-right">EStatus:</small>
+                                        <small class="text-right">Estatus:</small>
                                         <span t-field="ticket.stage_id.name" class=" badge badge-pill badge-info" title="Estatus actual del ticket"/>
                                     </div>
                                 </h5>
