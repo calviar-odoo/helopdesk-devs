@@ -13,10 +13,9 @@ class HelpdeskTicketReportAnalysisInherit(models.Model):
 
     canal_type = fields.Many2one('res.canales', string='Canal', readonly=True)
     canal_typesito = fields.Char(string='Canal', readonly=True)
-    alias_ticket = fields.Many2one('res.alias', string='Ente/Operadora')
-    clasificacion_ticket = fields.Many2one('clasificacion.ticket', string='Servicio')
-    subclasificacion_ticket = fields.Many2one('subclasificacion.ticket', string='Requerimiento')
-    solucion = fields.Many2one('solucion', string='Solucion', index=True)
+    alias_ticket = fields.Many2one('res.alias', string='Alias', index=True)
+    clasificacion_ticket = fields.Many2one('clasificacion.ticket', string='Categoria', index=True)
+    subclasificacion_ticket = fields.Many2one('subclasificacion.ticket', string='Sub-Categoria', index=True)
     tiempo_progress = fields.Float(string='T. Nuevo a Progreso')
     tiempo_completado = fields.Float(string='T. en Completarse')
     tiempo_anulado = fields.Float(string='T. en ser Anulado')
@@ -31,7 +30,6 @@ class HelpdeskTicketReportAnalysisInherit(models.Model):
                    T.alias_ticket AS alias_ticket,
                    T.clasificacion_ticket AS clasificacion_ticket,
                    T.subclasificacion_ticket AS subclasificacion_ticket,
-                   T.solucion AS solucion,
                    T.tiempo_progress AS tiempo_progress,
                    T.tiempo_completado AS tiempo_completado,
                    T.tiempo_anulado AS tiempo_anulado,
