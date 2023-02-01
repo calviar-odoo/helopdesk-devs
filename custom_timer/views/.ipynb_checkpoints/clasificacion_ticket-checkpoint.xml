@@ -6,10 +6,10 @@
             <field name="name">clasificacion.ticket.form</field>
             <field name="model">clasificacion.ticket</field>
             <field name="arch" type="xml">
-                <form string="Categoria Form">
+                <form string="Servicio Form">
                     <sheet>
                         <group>
-                            <field name="name" placeholder="Categoria"/>
+                            <field name="name" placeholder="Servicio"/>
                         </group>
                         <group>
                             <field name="alias"/>
@@ -44,12 +44,14 @@
         </record>
 
         <record model="ir.actions.act_window" id="clasificacion_ticket_list_action">
-            <field name="name">Categoria</field>
+            <field name="name">Clasificacion</field>
             <field name="res_model">clasificacion.ticket</field>
             <field name="view_mode">tree,form,pivot,graph</field>
-            <field name="help" type="html"> <p class="o_view_nocontent_smiling_face"> Agregar Nueva Clasificacion </p> </field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face"> Agregar nueva Clasificacion </p>
+            </field>
         </record>
 
-        <menuitem id="menu_clasificacion" name="Categoria Ticket" parent="helpdesk.helpdesk_menu_config" sequence="35"  action="clasificacion_ticket_list_action"/>
+        <menuitem id="menu_clasificacion" name="Clasificacion Ticket" parent="helpdesk.helpdesk_menu_config" sequence="35" action="clasificacion_ticket_list_action"/>
     </data>
 </odoo>
